@@ -18,7 +18,46 @@ public class InterpretDrawingFile {
 		JFileChooser chooser = new JFileChooser("resources");
 		chooser.showOpenDialog(null);
 		File f = new File(chooser.getSelectedFile().getPath());
-		Scanner in = new Scanner(f); //making Scanner with a File
+		Scanner in = new Scanner(f); //making Scanner with a File 
+
+		String shapeType = in.next();
+		int redComponent = in.nextInt();
+		int greenComponent = in.nextInt();
+		int blueComponent = in.nextInt();
+		boolean isFilled = in.nextBoolean();
+
+		if (shapeType == "ellipse") {
+			double parameterOne = in.nextDouble();
+			double parameterTwo = in.nextDouble();
+			double parameterThree = in.nextDouble();
+			double parameterFour = in.nextDouble();
+
+			StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
+			StdDraw.filledEllipse(parameterOne, parameterTwo, parameterThree, parameterFour);
+
+		}else if( shapeType == "rectangle") {
+			double parameterOne = in.nextDouble();
+			double parameterTwo = in.nextDouble();
+			double parameterThree = in.nextDouble();
+			double parameterFour = in.nextDouble();
+			
+			StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
+			StdDraw.filledRectangle(parameterOne, parameterTwo, parameterThree, parameterFour);
+		}else {
+			double parameterOne = in.nextDouble();
+			double parameterTwo = in.nextDouble();
+			double parameterThree = in.nextDouble();
+			double parameterFour = in.nextDouble();
+			double parameterFive = in.nextDouble();
+			double parameterSix = in.nextDouble();
+
+			StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
+			StdDraw.filledTriangle
+		}
 		
+
+
+		StdDraw.setPenColor(255, 0, 0);
+		StdDraw.filledRectangle(0.5, 0.5, 0.2, 0.3);
 	}
 }
